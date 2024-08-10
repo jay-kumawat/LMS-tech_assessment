@@ -29,10 +29,10 @@ public class testLms {
         assertEquals(5, b1.getTotalCopies());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void test_add_copies_IfNegativeNumber(){
         int additional_copies = -2;
         b1.add_copies(additional_copies);
-        assertEquals(2, b1.getTotalCopies());
+        // assertEquals(2, b1.getTotalCopies());
     }
 }
