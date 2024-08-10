@@ -35,4 +35,10 @@ public class testLms {
         b1.add_copies(additional_copies);
         // assertEquals(2, b1.getTotalCopies());
     }
+
+    @Test
+    public void test_borrow_book(){
+        b1.borrow_book();
+        assertEquals(1, b1.getBorrowedCopies());
+    }
 }

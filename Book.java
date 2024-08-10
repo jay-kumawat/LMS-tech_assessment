@@ -24,6 +24,9 @@ public class Book {
         }
     }
     
+    public void borrow_book(){
+        borrowedCopies++;
+    }
     public String getIsbn() {
         return isbn;
     }
