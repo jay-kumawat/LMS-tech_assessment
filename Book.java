@@ -15,6 +15,10 @@ public class Book {
         this.totCopies = totalCopies;
         this.borrowedCopies = 0;
     }
+
+    public void add_copies(int numberOfCopies){
+        totCopies = totCopies + numberOfCopies;
+    }
     
     public String getIsbn() {
         return isbn;
