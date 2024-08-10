@@ -22,4 +22,11 @@ public class testLms {
         assertEquals(3, b2.getTotalCopies());
     }
 
+    @Test
+    public void test_add_copies_ofBook(){
+        int additional_copies = 3;
+        b1.add_copies(additional_copies);
+        assertEquals(5, b1.getTotalCopies());
+    }
+
 }
