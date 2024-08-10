@@ -51,4 +51,15 @@ public class testLms {
         // changing the functionality of method accorifing below testcase
         assertFalse(b1.borrow_book());
     }
+
+    @Test
+    public void test_return_book(){
+        //Intially no Copies were borrowed so should return false
+        assertFalse(b1.return_book());
+        
+        //borrowing one book so can return it
+        b1.borrow_book();
+        b1.return_book();
+        assertEquals(0, b1.getBorrowedCopies());
+    }
 }
