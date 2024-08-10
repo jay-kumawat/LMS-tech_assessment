@@ -17,7 +17,11 @@ public class Book {
     }
 
     public void add_copies(int numberOfCopies){
-        totCopies = totCopies + numberOfCopies;
+        if(numberOfCopies > 0){
+            totCopies = totCopies + numberOfCopies;
+        }else{
+            throw new IllegalArgumentException("numberOfCopies should be > 0");
+        }
     }
     
     public String getIsbn() {
