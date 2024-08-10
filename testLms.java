@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.*;
@@ -40,5 +42,13 @@ public class testLms {
     public void test_borrow_book(){
         b1.borrow_book();
         assertEquals(1, b1.getBorrowedCopies());
+
+        //Borrowing 1 more book
+        b1.borrow_book();
+        assertEquals(2, b1.getBorrowedCopies());
+
+        //b1 has total 2 copies what if i borrow it once again should return false
+        // changing the functionality of method accorifing below testcase
+        assertFalse(b1.borrow_book());
     }
 }
