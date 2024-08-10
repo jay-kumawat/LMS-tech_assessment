@@ -36,6 +36,7 @@ public class Book {
         if(borrowedCopies == 0){
             return false;
         }
+        borrowedCopies--;
         return true;
 
     }
