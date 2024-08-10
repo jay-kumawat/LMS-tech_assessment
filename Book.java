@@ -24,9 +24,14 @@ public class Book {
         }
     }
     
-    public void borrow_book(){
+    public boolean borrow_book(){
+        if(borrowedCopies == totCopies){
+            return false;
+        }
         borrowedCopies++;
+        return true;
     }
+
     public String getIsbn() {
         return isbn;
     }
