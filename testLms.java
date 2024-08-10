@@ -29,4 +29,10 @@ public class testLms {
         assertEquals(5, b1.getTotalCopies());
     }
 
+    @Test
+    public void test_add_copies_IfNegativeNumber(){
+        int additional_copies = -2;
+        b1.add_copies(additional_copies);
+        assertEquals(2, b1.getTotalCopies());
+    }
 }
