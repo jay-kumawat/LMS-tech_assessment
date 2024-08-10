@@ -40,6 +40,10 @@ public class Book {
         return true;
 
     }
+    
+    public int getAvailCopies(){
+        return totCopies - borrowedCopies;
+    }
 
 
     public String getIsbn() {
