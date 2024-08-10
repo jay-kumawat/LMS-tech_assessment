@@ -62,4 +62,14 @@ public class testLms {
         b1.return_book();
         assertEquals(0, b1.getBorrowedCopies());
     }
+
+    @Test
+    public void test_getAvailCopies(){
+        b2.borrow_book();
+        b2.borrow_book();
+        assertEquals(1, b2.getAvailCopies());
+
+        b2.return_book();
+        assertEquals(2, b2.getAvailCopies());
+    }
 }
