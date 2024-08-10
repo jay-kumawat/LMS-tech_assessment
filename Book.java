@@ -32,7 +32,14 @@ public class Book {
         return true;
     }
 
-    
+    public boolean return_book(){
+        if(borrowedCopies == 0){
+            return false;
+        }
+        return true;
+
+    }
+
 
     public String getIsbn() {
         return isbn;
