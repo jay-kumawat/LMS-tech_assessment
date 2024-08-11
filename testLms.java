@@ -86,4 +86,12 @@ public class testLms {
     public void testBookAdded_toLibrary(){
         assertEquals(2, lib.getTotalNumberofAllBooks());
     }
+
+    //Now if Same Isbn book is enterd number of copies of that perticuler book should get inncreased
+
+    @Test
+    public void testIncreaseCopies_OfParticulerBook(){
+        lib.add_book(new Book("9356294496", "Mahagatha", "Satyarth Nayak", 2022, 3));
+        assertEquals(5, b1.getTotalCopies());
+    }
 }
