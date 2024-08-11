@@ -27,6 +27,10 @@ public class Library {
         return book.borrow_book();
     }
 
+    public boolean return_book(String isbn){   
+        Book book = allBooks.get(isbn);
+        return book.return_book();
+    }
     public int getTotalNumberofAllBooks(){
         return allBooks.size();
     }
