@@ -2,6 +2,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.junit.*;
 
 public class testLms {
@@ -149,5 +151,12 @@ public class testLms {
     @Test(expected = IllegalArgumentException.class)
     public void testReturnBook_notExistinLibrary(){
         lib.return_book("1234567890");
+    }
+
+    @Test
+    public void testgetAvailBooks(){
+        List<Book> availableBooks =  lib.getAvailBooks();
+        assertTrue(availableBooks.contains(b1));
+        assertTrue(availableBooks.contains(b2));
     }
 }
