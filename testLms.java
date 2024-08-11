@@ -159,4 +159,19 @@ public class testLms {
         assertTrue(availableBooks.contains(b1));
         assertTrue(availableBooks.contains(b2));
     }
+
+    @Test
+    public void testAvailableBooks_IfSomeoneBorrows(){
+        
+        lib.borrow_book("9356294496");
+        lib.borrow_book("9356294496");
+        assertFalse(lib.borrow_book("9356294496")); //No more copies are availble
+        
+        assertEquals(0, b1.getAvailCopies());
+        
+        List<Book> avaBooks = lib.getAvailBooks();
+        //only one book will be availble 
+        assertEquals(1, avaBooks.size());
+        
+    }
 }
