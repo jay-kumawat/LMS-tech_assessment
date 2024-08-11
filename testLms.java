@@ -191,4 +191,19 @@ public class testLms {
         List<Book> avaBooks = lib.getAvailBooks();
         assertTrue(avaBooks.isEmpty());
     }
+
+    @Test
+    public void testBorrowingAndReturningBook_MultipleTimes(){
+        assertTrue(lib.borrow_book("978-8122905229"));
+        assertTrue(lib.borrow_book("978-8122905229"));
+
+        assertEquals(1, b2.getAvailCopies());
+        
+        assertTrue(lib.return_book("978-8122905229"));
+        assertEquals(2, b2.getAvailCopies());
+        
+        assertTrue(lib.return_book("978-8122905229"));
+        assertEquals(3, b2.getAvailCopies());
+
+    }
 }
