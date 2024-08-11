@@ -174,4 +174,21 @@ public class testLms {
         assertEquals(1, avaBooks.size());
         
     }
+
+    @Test
+    public void testAvailableBooks_IfNoBookIsAvailable(){
+        lib.borrow_book("9356294496");
+        lib.borrow_book("9356294496");
+
+        lib.borrow_book("978-8122905229");
+        lib.borrow_book("978-8122905229");
+        lib.borrow_book("978-8122905229");
+
+        assertEquals(0, b1.getAvailCopies());
+        assertEquals(0, b2.getAvailCopies());
+
+        //no books are availble in the library now
+        List<Book> avaBooks = lib.getAvailBooks();
+        assertTrue(avaBooks.isEmpty());
+    }
 }
