@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Library {
@@ -34,7 +36,18 @@ public class Library {
         }
         return book.return_book();
     }
+
     public int getTotalNumberofAllBooks(){
         return allBooks.size();
+    }
+
+    public List<Book> getAvailBooks(){
+        List<Book> availableBooks = new ArrayList<>();
+        for(Book b : allBooks.values()){
+            if(b.getAvailCopies() > 0){
+                availableBooks.add(b);
+            }
+        }
+        return availableBooks;
     }
 }
