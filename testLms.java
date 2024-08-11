@@ -139,4 +139,10 @@ public class testLms {
         assertTrue(lib.return_book("9356294496"));
         assertEquals(2, b1.getAvailCopies());
     }
+
+    @Test
+    public void testReturnBook_thatisNotBorrowed(){
+        //this will return false because book is not borrowed
+        assertFalse(lib.return_book("9356294496")); 
+    }
 }
