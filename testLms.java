@@ -111,4 +111,9 @@ public class testLms {
         lib.add_book(new Book("9356294496", "Mahagatha", "Satyarth Nayak", 2022, 0));
     }
     
+    @Test
+    public void testBorrowBookFromLib(){
+        assertTrue(lib.borrow_book("9356294496"));
+        assertEquals(1,b1.getAvailCopies());
+    }
 }
