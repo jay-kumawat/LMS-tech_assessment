@@ -11,6 +11,9 @@ public class Book {
         if(isbn == null || title == null || isbn.isEmpty() || title.isEmpty()){
             throw new IllegalArgumentException("Isbn and title cant be null");
         }
+        if(totalCopies < 1){
+            throw new IllegalArgumentException("Total Copies cant be 0 oe less");
+        }
         this.isbn = isbn;
         this.title = title;
         this.author = author;

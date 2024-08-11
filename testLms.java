@@ -29,7 +29,11 @@ public class testLms {
         b2 = new Book("978-0241301913", "","DK", 2021, 1);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testTotalCopiesInBookObj(){
+        Book book = new Book("978-0241301913", "The Mythology","DK", 2021, 0);
 
+    }
     @Test
     public void testBookObject() {
         assertEquals("978-8122905229", b2.getIsbn());
@@ -106,5 +110,5 @@ public class testLms {
     public void testTo_addBookWith_InvalidCopies(){
         lib.add_book(new Book("9356294496", "Mahagatha", "Satyarth Nayak", 2022, 0));
     }
-
+    
 }
