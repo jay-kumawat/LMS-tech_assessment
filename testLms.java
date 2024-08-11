@@ -116,4 +116,12 @@ public class testLms {
         assertTrue(lib.borrow_book("9356294496"));
         assertEquals(1,b1.getAvailCopies());
     }
+
+    @Test
+    public void testBorrowAllBooks(){
+        assertTrue(lib.borrow_book("9356294496"));
+        assertTrue(lib.borrow_book("9356294496"));
+        assertFalse(lib.borrow_book("9356294496")); //No more copies availble thats why return false
+        assertEquals(0, b1.getAvailCopies());
+    }
 }
