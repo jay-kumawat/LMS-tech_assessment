@@ -131,4 +131,12 @@ public class testLms {
     public void testBorrowBook_IsbnIsNotAvailble(){
         lib.borrow_book("1124523456");
     }
+
+    @Test
+    public void testReturnBook_AfterBorrowing(){
+        lib.borrow_book("9356294496");
+        assertEquals(1, b1.getAvailCopies());
+        assertTrue(lib.return_book("9356294496"));
+        assertEquals(2, b1.getAvailCopies());
+    }
 }
