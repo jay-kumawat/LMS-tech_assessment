@@ -6,15 +6,21 @@ import org.junit.*;
 
 public class testLms {
 
+    Library lib;
     Book b1;
     Book b2;
 
     @Before
     public void setUp(){
+        lib = new Library();
         //format Book Const : isbn, title, author, publishyear, totalCopeies
         //isbn can be 10 or 13 digits so str will bttr
         b1 = new Book("9356294496", "Mahagatha", "Satyarth Nayak", 2022, 2);
         b2 = new Book("978-8122905229", "HISTORY OF INDIAN PHILOSOPHY", "DR. R.N.SHARMA", 2019, 3);
+    
+        // adding books into the library 
+        lib.add_book(b1);
+        lib.add_book(b2);
     }
 
     @Test
@@ -71,5 +77,13 @@ public class testLms {
 
         b2.return_book();
         assertEquals(2, b2.getAvailCopies());
+    }
+
+    //Book is complete
+    //Now adding thhe library class
+
+    @Test
+    public void testBookAdded_toLibrary(){
+        assertEquals(2, lib.all_books.size());
     }
 }
