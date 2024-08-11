@@ -84,6 +84,6 @@ public class testLms {
 
     @Test
     public void testBookAdded_toLibrary(){
-        assertEquals(2, lib.all_books.size());
+        assertEquals(2, lib.getTotalNumberofAllBooks());
     }
 }
