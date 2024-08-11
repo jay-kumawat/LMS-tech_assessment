@@ -8,6 +8,9 @@ public class Book {
     private int borrowedCopies;
 
     public Book(String isbn, String title, String author, int publishyear, int totalCopies) {
+        if(isbn == null || title == null || isbn.isEmpty() || title.isEmpty()){
+            throw new IllegalArgumentException("Isbn and title cant be null");
+        }
         this.isbn = isbn;
         this.title = title;
         this.author = author;

@@ -29,7 +29,7 @@ public class testLms {
         b2 = new Book("978-0241301913", "","DK", 2021, 1);
     }
 
-    
+
     @Test
     public void testBookObject() {
         assertEquals("978-8122905229", b2.getIsbn());
