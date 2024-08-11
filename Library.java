@@ -19,6 +19,11 @@ public class Library {
         }
     }
 
+    public boolean borrow_book(String isbn){
+        Book book =  allBooks.get(isbn);
+        return book.borrow_book();
+    }
+
     public int getTotalNumberofAllBooks(){
         return allBooks.size();
     }
