@@ -94,4 +94,9 @@ public class testLms {
         lib.add_book(new Book("9356294496", "Mahagatha", "Satyarth Nayak", 2022, 3));
         assertEquals(5, b1.getTotalCopies());
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testTo_addBookWith_InvalidCopies(){
+        lib.add_book(new Book("9356294496", "Mahagatha", "Satyarth Nayak", 2022, 0));
+    }
 }
