@@ -124,4 +124,11 @@ public class testLms {
         assertFalse(lib.borrow_book("9356294496")); //No more copies availble thats why return false
         assertEquals(0, b1.getAvailCopies());
     }
+
+
+    //if requesting non existing book from the library
+    @Test(expected = IllegalArgumentException.class)
+    public void testBorrowBook_IsbnIsNotAvailble(){
+        lib.borrow_book("1124523456");
+    }
 }

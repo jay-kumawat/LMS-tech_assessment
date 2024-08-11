@@ -21,6 +21,9 @@ public class Library {
 
     public boolean borrow_book(String isbn){
         Book book =  allBooks.get(isbn);
+        if(book == null){
+            throw new IllegalArgumentException("isbn not availble");
+        }
         return book.borrow_book();
     }
 
