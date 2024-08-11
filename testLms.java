@@ -145,4 +145,9 @@ public class testLms {
         //this will return false because book is not borrowed
         assertFalse(lib.return_book("9356294496")); 
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testReturnBook_notExistinLibrary(){
+        lib.return_book("1234567890");
+    }
 }
