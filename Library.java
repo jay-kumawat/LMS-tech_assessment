@@ -29,6 +29,9 @@ public class Library {
 
     public boolean return_book(String isbn){   
         Book book = allBooks.get(isbn);
+        if(book == null){
+            throw new IllegalArgumentException("isbn not available");
+        }
         return book.return_book();
     }
     public int getTotalNumberofAllBooks(){
