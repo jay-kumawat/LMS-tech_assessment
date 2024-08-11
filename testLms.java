@@ -23,6 +23,13 @@ public class testLms {
         lib.add_book(b2);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testIfInvalidFieldsInBook(){
+        b1 = new Book("","The Hidden Hindu","Akshat Gupta", 2022, 2);
+        b2 = new Book("978-0241301913", "","DK", 2021, 1);
+    }
+
+    
     @Test
     public void testBookObject() {
         assertEquals("978-8122905229", b2.getIsbn());
@@ -99,5 +106,5 @@ public class testLms {
     public void testTo_addBookWith_InvalidCopies(){
         lib.add_book(new Book("9356294496", "Mahagatha", "Satyarth Nayak", 2022, 0));
     }
-    
+
 }
